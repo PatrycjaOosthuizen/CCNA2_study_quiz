@@ -1,7 +1,7 @@
 # CCNA 2 Final Exam Study Quiz
 ### Switching, Routing & Wireless Essentials · v7.0 · 173 Questions
 
-> Built by [PoCodes]— a free interactive study tool for Cisco CCNA 2 exam preparation.
+> Built by [POCodes]— a free interactive study tool for Cisco CCNA 2 exam preparation.
 
 ---
 
@@ -97,7 +97,7 @@ CCNA2_study_quiz/
 
 ## 👩‍💻 Author
 
-Made with ♥ by **PoCodes**
+Made with ♥ by **POCodes**
 ---
 
 *This tool is intended for personal study use. Questions are based on publicly available Cisco NetAcad CCNA 2 v7.0 exam material.*
