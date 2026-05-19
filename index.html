@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CCNA 2 v7.0 Final Exam — PoCodes Study Tool</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="logo-btn" onclick="goHome()" title="Back to main menu">CCNA 2</button>
+    <div><div class="ht">Switching, Routing &amp; Wireless Essentials</div><div class="hs">v7.0 Final Exam — 173 Questions</div></div>
+  </div>
+  <div class="stats" id="stats" style="display:none">
+    <div class="stat"><div class="dot c"></div><span id="sc">0</span></div>
+    <div class="stat"><div class="dot w"></div><span id="sw">0</span></div>
+    <div class="stat"><div class="dot s"></div><span id="ss">0</span></div>
+    <div class="stat"><div class="dot m"></div><span id="sm">0</span></div>
+  </div>
+</div>
+<div class="prog"><div class="pf" id="pf" style="width:0%"></div></div>
+
+<div class="main">
+<div id="start">
+  <div class="sl">PoCodes Study Tool</div>
+  <h1 class="st">CCNA 2 Final Exam</h1>
+  <p class="sd">Switching, Routing &amp; Wireless Essentials · v7.0<br>Select an answer to see why every option is right or wrong.</p>
+
+  <div class="feats">
+    <div class="feat"><div class="fi">📝</div><div class="fv">173</div><div class="fl">Questions</div></div>
+    <div class="feat"><div class="fi">💡</div><div class="fv">Per-option</div><div class="fl">Explanations</div></div>
+    <div class="feat"><div class="fi">🔁</div><div class="fv">Practice</div><div class="fl">Wrong answers</div></div>
+    <div class="feat"><div class="fi">📖</div><div class="fv">Summary</div><div class="fl">Each topic</div></div>
+  </div>
+
+  <div class="modes">
+    <button class="mode active" onclick="selMode('all',this)">All 173<div class="ms">Full exam</div></button>
+    <button class="mode" onclick="selMode('60',this)">Random 60<div class="ms">Quick session</div></button>
+    <button class="mode" onclick="selMode('20',this)">Random 20<div class="ms">Fast drill</div></button>
+    <button class="mode mode-practice" id="btn-practice" onclick="selMode('practice',this)" style="display:none">
+      🔁 Practice Wrong<div class="ms" id="practice-count"></div>
+    </button>
+  </div>
+  <button class="btn btn-p" style="margin:0 auto;font-size:15px;padding:13px 32px" onclick="startQuiz()">▶ Start Quiz</button>
+</div>
+
+<div id="quiz">
+  <div class="qmeta">
+    <span class="qbadge" id="qpos">Q1 / 173</span>
+    <span class="qorig" id="qorig">Original #1</span>
+    <span class="qmulti" id="qmulti" style="display:none">Choose multiple</span>
+  </div>
+  <div class="card">
+    <div class="qtx" id="qtx"></div>
+    <div id="qexhibit"></div>
+    <div class="opts" id="opts"></div>
+  </div>
+  <div class="rbanner" id="rbanner"></div>
+  <div class="summary" id="summary">
+    <div class="sum-hdr">📖 Topic Summary</div>
+    <div class="sum-tx" id="sum-tx"></div>
+  </div>
+  <div class="actions">
+    <button class="btn btn-p" id="btncheck" onclick="checkAnswer()">Check Answer</button>
+    <button class="btn btn-s" id="btnnext" onclick="nextQ()" style="display:none">Next →</button>
+    <button class="btn btn-g" id="btnback" onclick="goBack()" style="display:none">← Back</button>
+    <button class="btn btn-g" onclick="skipQ()">Skip</button>
+  </div>
+</div>
+
+<div id="score">
+  <div class="sring" id="sring"><div class="spct" id="spct">0%</div><div class="slbl">score</div></div>
+  <h2 class="sttl" id="sttl"></h2>
+  <p class="sdet" id="sdet"></p>
+  <div class="sbreak">
+    <div class="sbox"><div class="snum c" id="snc">0</div><div class="slb">Correct</div></div>
+    <div class="sbox"><div class="snum w" id="snw">0</div><div class="slb">Wrong</div></div>
+    <div class="sbox"><div class="snum s" id="sns">0</div><div class="slb">Skipped</div></div>
+    <div class="sbox"><div class="snum m" id="snm">0</div><div class="slb">Multi-ans</div></div>
+  </div>
+  <p id="scorenote" style="font-size:12px;color:var(--mu);margin-bottom:20px;padding:0 20px"></p>
+  <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+    <button class="btn btn-p" onclick="selMode('all',null);startQuiz()">Try Again</button>
+    <button class="btn btn-s" onclick="showReview()">Review Wrong</button>
+    <button class="btn btn-g" onclick="showStart()">← Menu</button>
+  </div>
+</div>
+
+<div id="review">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:22px">
+    <button class="btn btn-g" onclick="hide('review');show('score')">← Back</button>
+    <h2 style="font-size:18px;font-weight:700">Wrong Answers Review</h2>
+  </div>
+  <div class="rev-list" id="revlist"></div>
+</div>
+</div>
+
+<footer>
+  <span>Made with ♥ by</span><span class="fa">PoCodes</span><span>·</span><span>CCNA 2 v7.0 · <span id="fyear"></span></span>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
