@@ -1,4 +1,35 @@
 const L='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+function renderSummary(text){
+  const el=document.getElementById('sum-tx');
+  // Split on [IMG:...] tags
+  const parts=text.split(/\[IMG:(.*?)\]/g);
+  el.innerHTML='';
+  for(let i=0;i<parts.length;i++){
+    if(i%2===0){
+      // plain text segment (may contain \n\n)
+      if(parts[i].trim()){
+        const p=document.createElement('p');
+        p.style.cssText='margin:0 0 10px;white-space:pre-wrap';
+        p.textContent=parts[i].replace(/^\\n\\n|^\n\n/,'').trimStart();
+        el.appendChild(p);
+      }
+    } else {
+      // image: format is "img:image/png|base64data"
+      const raw=parts[i];
+      if(raw.startsWith('img:')){
+        const inner=raw.slice(4);
+        const pipe=inner.indexOf('|');
+        const mime=inner.slice(0,pipe);
+        const b64=inner.slice(pipe+1);
+        const img=document.createElement('img');
+        img.src='data:'+mime+';base64,'+b64;
+        img.style.cssText='max-width:100%;border-radius:8px;border:1px solid var(--bd);background:#fff;margin-top:10px;display:block';
+        el.appendChild(img);
+      }
+    }
+  }
+}
 let queue=[],idx=0,sel=[],answered=false,results=[],mode='all';
 let practicePool=null;
 
@@ -97,6 +128,7 @@ function renderQ(){
   document.getElementById('summary').className='summary';
   document.getElementById('btnback').style.display=idx>0?'inline-flex':'none';
   if(q.is_match){
+    document.getElementById('opts').innerHTML='';
     document.getElementById('btncheck').style.display='none';
     document.getElementById('btnnext').style.display='inline-flex';
     document.getElementById('rbanner').className='rbanner show rm';
@@ -109,7 +141,7 @@ function renderQ(){
     document.getElementById('btncheck').disabled=true;
     document.getElementById('btnnext').style.display='none';
   }
-  if(q.show_summary&&q.summary){document.getElementById('sum-tx').textContent=q.summary;document.getElementById('summary').className='summary show';}
+  if(q.show_summary&&q.summary){renderSummary(q.summary);document.getElementById('summary').className='summary show';}
   document.getElementById('pf').style.width=(idx/queue.length*100)+'%';
 }
 
@@ -146,7 +178,7 @@ function checkAnswer(){
   if(full){rb.className='rbanner show rc';rb.textContent='✓ Correct!';}
   else if(partial){const m=corr.filter(i=>!user.includes(i)).map(i=>L[i]).join(', ');rb.className='rbanner show rp';rb.textContent='Partial — also needed: '+m;}
   else{rb.className='rbanner show rw';rb.textContent='✗ Wrong — correct: '+corr.map(i=>L[i]).join(', ');}
-  if(q.summary){document.getElementById('sum-tx').textContent=q.summary;document.getElementById('summary').className='summary show';}
+  if(q.summary){renderSummary(q.summary);document.getElementById('summary').className='summary show';}
   document.getElementById('btncheck').style.display='none';
   document.getElementById('btnnext').style.display='inline-flex';
   results.push({q:q,correct:full,skipped:false});
@@ -166,7 +198,7 @@ function skipQ(){
   });
   const rb=document.getElementById('rbanner');rb.className='rbanner show rp';
   rb.textContent='⏭ Skipped — correct: '+q.correct.map(i=>L[i]).join(', ');
-  if(q.summary){document.getElementById('sum-tx').textContent=q.summary;document.getElementById('summary').className='summary show';}
+  if(q.summary){renderSummary(q.summary);document.getElementById('summary').className='summary show';}
   results.push({q:q,correct:false,skipped:true});
   document.getElementById('btncheck').style.display='none';
   document.getElementById('btnnext').style.display='inline-flex';
