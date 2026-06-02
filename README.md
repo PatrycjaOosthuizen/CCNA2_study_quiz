@@ -1,4 +1,5 @@
 # CCNA 2 Final Exam Study Quiz
+
 ### Switching, Routing & Wireless Essentials · v7.0 · 173 Questions
 
 > Built by [POCodes]— a free interactive study tool for Cisco CCNA 2 exam preparation.
@@ -33,15 +34,15 @@ Topics covered:
 
 ## ✨ Features
 
-| Feature | Details |
-|---|---|
-| 📝 173 Questions | Full CCNA 2 v7.0 Final Exam coverage |
+| Feature                    | Details                                                |
+| -------------------------- | ------------------------------------------------------ |
+| 📝 173 Questions           | Full CCNA 2 v7.0 Final Exam coverage                   |
 | 💡 Per-option explanations | Every option marked ✓ CORRECT or ✗ WRONG with a reason |
-| 📖 Topic Summary | Key concept shown after every question |
-| 🖼️ Exhibit support | Network diagrams embedded directly in questions |
-| 🔁 Practice Wrong answers | Retry only the questions you got wrong |
-| 🎯 Three quiz modes | Full exam / Random 60 / Random 20 |
-| 📱 Responsive | Works on desktop, tablet, and mobile |
+| 📖 Topic Summary           | Key concept shown after every question                 |
+| 🖼️ Exhibit support         | Network diagrams embedded directly in questions        |
+| 🔁 Practice Wrong answers  | Retry only the questions you got wrong                 |
+| 🎯 Three quiz modes        | Full exam / Random 60 / Random 20                      |
+| 📱 Responsive              | Works on desktop, tablet, and mobile                   |
 
 ---
 
@@ -59,21 +60,21 @@ CCNA2_study_quiz/
 
 ## 🎓 Quiz Modes
 
-| Mode | Questions | Best for |
-|---|---|---|
-| **All 173** | Full exam | Complete exam preparation |
-| **Random 60** | 60 random | Quick study session |
-| **Random 20** | 20 random | Fast daily drill |
+| Mode                  | Questions          | Best for                                           |
+| --------------------- | ------------------ | -------------------------------------------------- |
+| **All 173**           | Full exam          | Complete exam preparation                          |
+| **Random 60**         | 60 random          | Quick study session                                |
+| **Random 20**         | 20 random          | Fast daily drill                                   |
 | **🔁 Practice Wrong** | Your wrong answers | Targeted revision (unlocks after finishing a quiz) |
 
 ---
 
 ## 🏆 Scoring
 
-| Score | Grade |
-|---|---|
+| Score | Grade                                            |
+| ----- | ------------------------------------------------ |
 | ≥ 83% | ✅ Exam Ready — above the CCNA passing threshold |
-| ≥ 65% | 💪 Almost There — review wrong answers |
+| ≥ 65% | 💪 Almost There — review wrong answers           |
 | < 65% | 📚 Keep Going — study the explanations carefully |
 
 ---
@@ -88,16 +89,15 @@ CCNA2_study_quiz/
 
 ## 📚 Also Available
 
-| Quiz | Link |
-|---|---|
-| CCNA 1 — Introduction to Networks | [ccna-1.netlify.app](https://ccna-1.netlify.app) |
+| Quiz                                   | Link                                             |
+| -------------------------------------- | ------------------------------------------------ |
+| CCNA 1 — Introduction to Networks      | [ccna-1.netlify.app](https://ccna-1.netlify.app) |
 | CCNA 2 — Switching, Routing & Wireless | [ccna-2.netlify.app](https://ccna-2.netlify.app) |
 
 ---
 
 ## 👩‍💻 Author
 
-Made with ♥ by **POCodes**
----
+## Made with ♥ by **POCodes**
 
-*This tool is intended for personal study use. Questions are based on publicly available Cisco NetAcad CCNA 2 v7.0 exam material.*
+_This tool is intended for personal study use. Questions are based on publicly available Cisco NetAcad CCNA 2 v7.0 exam material. Note: Questions 199, 124, 138 and 155 are intentionally incorrect. The topic summary provides clues that guide users to the correct answer._
